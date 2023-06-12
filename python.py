@@ -1,29 +1,32 @@
 #Ejercicicio 3*: Implementar la clase cola vista en clase
 class Cola:
     """La cola es una coleccion de datos lineales, FIFO (First in First out)"""
-    def __init__(self):
-        cola= []
+    elementos= []
+    primer_cola= []
 
     def agregar(self, item):
-        self.cola.append(item)
+        self.elementos.append(item)
 
     def es_vacia(self)->bool: 
-        return self.cola == []
+        return self.elementos == []
 
     def primero(self): # fijarse que no este vacia
         if not self.es_vacia():
-            return self.cola[0]
+            return self.elementos[0]
 
     def tamanio(self):
-        return len(self.cola)
+        return len(self.elementos)
 
     def sacar(self):
         if not self.es_vacia():
-            return self.cola.pop(0)
+            return self.elementos.pop(0)
+
+    def imprimir(self):
+        for i in self.elementos:
+            return i
 
     def __str__(self):
-        return str(self.cola)
-        #return ("{cola}".format(self.elementos))
+        return ("{cola}".format(self.elementos))
 
 p = Cola() # crea una cola (vacia)
 print(p.es_vacia()) #True
@@ -96,7 +99,8 @@ cola3 = Cola([1,2,3,2])
 assert cola1 != cola2
 
 # Ejercicio 8:
-# Escriba una función que reciba una Cola C1 y mueva sus elementos a una nueva Cola c2, manteniendo el orden de salida de los elementos. Al finalizar la Cola C1 no debe contener elementos.
+# Escriba una función que reciba una Cola C1 y mueva sus elementos a una nueva Cola c2, manteniendo
+#  el orden de salida de los elementos. Al finalizar la Cola C1 no debe contener elementos.
 
 def trasladar_p(c:cola)->cola:
     pass
