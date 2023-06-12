@@ -31,6 +31,9 @@ class Cola:
     def __str__(self):
         return ("{}".format(self.elementos))
 
+    def __eq__ (self,otro_elementos):
+        return (self.elementos == otro_elementos.elementos)
+
 p = Cola() # crea una cola (vacia)
 print(p.es_vacia()) #True
 assert p.es_vacia() == True
@@ -91,7 +94,7 @@ reverse = revertir_str(palabra)
 print(reverse)
 assert reverse == "nohtyP"
 
-#Ejercicio 7 *
+#Ejercicio 7. a *
 """ Agregar a la clase cola un método:
     - __eq__ que dice si dos colas son iguales
 """
