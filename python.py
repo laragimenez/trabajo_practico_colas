@@ -84,7 +84,7 @@ assert cola.es_vacia == True
 #Ejercicio 7*
 def revertir_str(palabra)->str:
     """ toma un string y devuelve las palabras en sentido inverso """
-    pass
+    palabra.reverse()
 
 palabra = "Python"
 reverse = revertir_str(palabra)
