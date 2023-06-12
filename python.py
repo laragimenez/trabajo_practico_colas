@@ -25,8 +25,11 @@ class Cola:
         for i in self.elementos:
             return i
 
+    def vaciar(self):
+        return self.elementos.clear()
+
     def __str__(self):
-        return ("{cola}".format(self.elementos))
+        return ("{}".format(self.elementos))
 
 p = Cola() # crea una cola (vacia)
 print(p.es_vacia()) #True
