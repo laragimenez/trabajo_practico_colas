@@ -109,12 +109,12 @@ assert cola1 != cola2
 # Ejercicio 8:
 # Escriba una función que reciba una Cola C1 y mueva sus elementos a una nueva Cola c2, manteniendo
 #  el orden de salida de los elementos. Al finalizar la Cola C1 no debe contener elementos.
-
+"""
 def trasladar_p(c:cola)->cola:
     pass
 c2 = trasladar(c1)
 assert c1.es_vacia == True
-
+"""
 # Ejercicio 9:
 """
 409 Diseña un método copia que devuelva una nueva Cola cuyo contenido es el mismo
@@ -136,7 +136,20 @@ tipo de cambio o alteración.(en principio utilizar los métodos de cola para la
 tarea)"""
 
 def concat(C1:cola,C2:cola)->Cola:
-    pass
+    cola_nueva=Cola()
+    
+    while not C1.es_vacia():
+        elem = C1.sacar()
+        cola_nueva.agregar(elem)
+        C1.agregar(elem)
+        
+    while not C2.es_vacia():
+        elem = C2.sacar()
+        cola_nueva.agregar(elem)
+        C2.agregar(elem)
+    return cola_nueva
+
+
 C1=Cola()
 C2=Cola()
 C1.agregar(1)
