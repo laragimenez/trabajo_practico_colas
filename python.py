@@ -1,8 +1,10 @@
 #Ejercicicio 3*: Implementar la clase cola vista en clase
 class Cola:
     """La cola es una coleccion de datos lineales, FIFO (First in First out)"""
-    elementos= []
-    primer_cola= []
+
+    def __init__(self, elementos= []) -> None:
+        self.elementos = elementos
+        
 
     def agregar(self, item):
         self.elementos.append(item)
@@ -134,18 +136,18 @@ tipo de cambio o alteración.(en principio utilizar los métodos de cola para la
 tarea)"""
 
 def concat(C1:cola,C2:cola)->Cola:
-
-c1=Cola()
-c2=Cola()
-c1.agregar(1)
-c1.agregar(4)
-c1.agregar(8)
-c2.agregar(4)
-c1.agregar(2)
-c1.agregar(7)
-print(c1)
-print(c2)
-res = concat(c1,c2)  #devuelve una cola [1,4,8,4,2,7] c1 sigue siendo [1,4,8]
+    pass
+C1=Cola()
+C2=Cola()
+C1.agregar(1)
+C1.agregar(4)
+C1.agregar(8)
+C2.agregar(4)
+C1.agregar(2)
+C1.agregar(7)
+print(C1)
+print(C2)
+res = concat(C1,C2)  #devuelve una cola [1,4,8,4,2,7] c1 sigue siendo [1,4,8]
 print (res)
 
 # Ejercicio 11 *
