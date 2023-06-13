@@ -121,13 +121,13 @@ assert c1.es_vacia == True
 de la Cola sobre la que se invoca el método. ¡Ojo con la memoria cuando saques una copia de
 self cola!
 """
-
+"""
     def copiar_p(self:Cola)->Cola:
         pass
 c2 = c1.copiar_p(c1)
 c1 == c2
 assert c1.es_vacia == True
-
+"""
 # Ejercicio 10 *
 """ Escriba un metodo de Cola que dada una cola C1 reciba una cola C2  de 
 números enteros y devuelva una nueva Cola con los elementos concatenados en el 
@@ -162,6 +162,30 @@ espera (que es una cola). Al seleccionar la segunda opción, aparecerá en panta
 paciente y se eliminará a este de la cola. La lista de espera respetará estrictamente el orden de
 llegada de los pacientes.
 """
+
+opcion=0
+turno=0
+pacientes= Cola()
+while opcion != "3":
+    opcion= int(input("\n1 Agregar un paciente a la lista de espera, \n2 Atender al primer paciente de la lista \n3 Finalizar la ejecución del programa:    \n"))
+    if opcion=="1":
+        paciente=input("Ingrese el nombre del paciente: ")
+        dni=input("Ingrese el número de DNI del paciente: ")
+        turno +=1
+        paciente= (paciente, dni, turno)
+        pacientes.agregar(paciente)
+        print(f"El paciente {paciente[0]} con DNI {paciente[1]}, turno{paciente[2]} ha sido agregado a la lista de espera.")
+        print("Lista de pacientes en espera: ", pacientes)
+    
+    elif opcion == "2":
+        if not pacientes.estaVacia():
+            paciente= pacientes.sacar()
+            print(f"El paciente {paciente[0]} con DNI {paciente[1]} y turno {paciente[2]} ha sido atendido.")
+        else:
+            print("No hay pacientes en espera.")   
+
+    elif opcion == "3":
+        break    
 
 # Ejercicio 12 
 """
